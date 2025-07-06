@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: cnncg2fla-go-gitops
+  description: This is GitOps manifest for cnncg2fla-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=cnncg2fla-go
+    backstage.io/kubernetes-id: cnncg2fla-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: cnncg2fla-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:cnncg2fla-go
